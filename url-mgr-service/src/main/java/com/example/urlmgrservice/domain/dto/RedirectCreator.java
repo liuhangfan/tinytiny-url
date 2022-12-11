@@ -1,4 +1,4 @@
-package com.example.urlmgrservice.entity;
+package com.example.urlmgrservice.domain.dto;
 
 import com.sun.istack.NotNull;
 
@@ -12,7 +12,6 @@ public class RedirectCreator {
         this.alias = alias;
         this.url = url;
     }
-
 
     public String getAlias() {
         return alias;

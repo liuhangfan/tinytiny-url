@@ -1,8 +1,8 @@
 package com.example.urlmgrservice.controller;
 
 
-import com.example.urlmgrservice.entity.Redirect;
-import com.example.urlmgrservice.entity.RedirectCreator;
+import com.example.urlmgrservice.entity.RedirectResult;
+import com.example.urlmgrservice.domain.dto.RedirectCreator;
 import com.example.urlmgrservice.service.RedirectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -26,8 +26,8 @@ public class RedirectController {
 
     @GetMapping("/{alias}")
     public ResponseEntity<?> handelRedirect(@PathVariable String alias) throws URISyntaxException {
-        Redirect redirect = redirectService.getRedirect(alias);
-        URI uri = new URI(redirect.getUrl());
+        RedirectResult redirectResult = redirectService.getRedirect(alias);
+        URI uri = new URI(redirectResult.getUrl());
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setLocation(uri);
         return new ResponseEntity<>(httpHeaders, HttpStatus.MOVED_PERMANENTLY);

@@ -5,7 +5,7 @@ import org.hibernate.annotations.NaturalId;
 import javax.persistence.*;
 
 @Entity
-public class Redirect {
+public class RedirectResult {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false, unique = true)
@@ -18,12 +18,12 @@ public class Redirect {
     @Column(nullable = false)
     private String url;
 
-    public Redirect(final String alias, final String url) {
+    public RedirectResult(final String alias, final String url) {
         this.alias = alias;
         this.url = url;
     }
 
-    public Redirect() {
+    public RedirectResult() {
 
     }
 
