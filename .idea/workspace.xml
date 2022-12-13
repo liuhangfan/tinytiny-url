@@ -48,9 +48,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "spring.configuration.checksum": "98649aa903e1b1c09340bc9c5b9ed19f"
   }
@@ -80,7 +80,8 @@
       <option name="presentableId" value="Default" />
       <updated>1670579213389</updated>
       <workItem from="1670579214681" duration="925000" />
-      <workItem from="1670750987983" duration="2330000" />
+      <workItem from="1670750987983" duration="4189000" />
+      <workItem from="1670919656656" duration="5350000" />
     </task>
     <servers />
   </component>

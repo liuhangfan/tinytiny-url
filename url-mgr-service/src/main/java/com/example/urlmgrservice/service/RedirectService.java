@@ -3,9 +3,10 @@ package com.example.urlmgrservice.service;
 
 import com.example.urlmgrservice.entity.RedirectResult;
 import com.example.urlmgrservice.domain.dto.RedirectCreator;
+import com.example.urlmgrservice.entity.TinyDoc;
 import com.example.urlmgrservice.exception.BadRequestException;
 import com.example.urlmgrservice.exception.NotFoundException;
-import com.example.urlmgrservice.repository.RedirectRepo;
+import com.example.urlmgrservice.repository.TinyRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,26 +14,29 @@ import java.util.Optional;
 
 @Service
 public class RedirectService {
-    private RedirectRepo redirectRepo;
+    private TinyRepo tinyRepo;
 
     @Autowired
-    public RedirectService(RedirectRepo redirectRepo){
-        this.redirectRepo = redirectRepo;
+    public RedirectService(TinyRepo tinyRepo) {
+        this.tinyRepo = tinyRepo;
     }
-    public Optional<RedirectResult> createRedirect(RedirectCreator redirectCreator) {
-        if(redirectRepo.existsByAlias(redirectCreator.getAlias())){
+
+    public Optional<TinyDoc> createTinyDoc(RedirectCreator redirectCreator){
+
+        if(tinyRepo.existsTinyDocById(redirectCreator.getAlias())){
             throw new BadRequestException("Alias already exists");
         }
-        RedirectResult redirectResult = new RedirectResult(redirectCreator.getAlias(), redirectCreator.getUrl());
 
-        RedirectResult postSaveRedirect = redirectRepo.save(redirectResult);
-        return Optional.ofNullable(postSaveRedirect);
+        TinyDoc tinyDoc = new TinyDoc(redirectCreator.getAlias(),redirectCreator.getUrl());
+        TinyDoc saveTinyDoc = tinyRepo.save(tinyDoc);
+        return Optional.of(saveTinyDoc);
     }
 
-    public RedirectResult getRedirect(String alias) {
-        RedirectResult redirectResult =  redirectRepo.findByAlias(alias).orElseThrow(
+    public TinyDoc getTinyDoc(String alias) {
+        TinyDoc tinyDoc =  tinyRepo.findTinyDocsById(alias).orElseThrow(
                 () -> new NotFoundException("we don't have that alias ! Try making it")
         );
-        return redirectResult;
+        return tinyDoc;
     }
+
 }
