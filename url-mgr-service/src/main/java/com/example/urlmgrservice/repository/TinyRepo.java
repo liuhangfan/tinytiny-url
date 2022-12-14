@@ -9,9 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface TinyRepo extends MongoRepository<TinyDoc,String> {
-    @Query()
+    //@Query()
     public Optional<TinyDoc> findTinyDocsById(String id);
-
-    @Query()
-    public Boolean existsTinyDocById(String id);
 }
