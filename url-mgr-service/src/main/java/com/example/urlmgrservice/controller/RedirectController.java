@@ -17,7 +17,6 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/api/v1")
 public class RedirectController {
     private final RedirectService redirectService;
 
@@ -29,11 +28,12 @@ public class RedirectController {
     @GetMapping("/{alias}")
     public ResponseEntity<?> handelRedirect(@PathVariable String alias) throws URISyntaxException {
         try {
+            System.out.println("intput " + alias);
             TinyDoc tinyDoc = redirectService.getTinyDoc(alias);
             URI uri = new URI(tinyDoc.getUrl());
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.setLocation(uri);
-            return new ResponseEntity<>(httpHeaders, HttpStatus.MOVED_PERMANENTLY);
+            return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

@@ -26,9 +26,7 @@ public class RedirectService {
     }
 
     public TinyDoc getTinyDoc(String alias) {
-        TinyDoc tinyDoc =  tinyRepo.findTinyDocsById(alias).orElseThrow(
-                () -> new NotFoundException("we don't have that alias ! Try making it")
-        );
+        TinyDoc tinyDoc = tinyRepo.findTinyDocsById(alias);
         return tinyDoc;
     }
 
