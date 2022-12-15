@@ -1,9 +1,9 @@
 package com.example.urlmgrservice.domain.dto;
 
-import com.sun.istack.NotNull;
+
+import javax.validation.constraints.NotNull;
 
 public class RedirectCreator {
-    @NotNull
     private String alias;
     @NotNull
     private String url;

@@ -1,7 +1,5 @@
 package com.example.urlmgrservice.service;
 
-
-import com.example.urlmgrservice.entity.RedirectResult;
 import com.example.urlmgrservice.domain.dto.RedirectCreator;
 import com.example.urlmgrservice.entity.TinyDoc;
 import com.example.urlmgrservice.exception.BadRequestException;
@@ -21,21 +19,14 @@ public class RedirectService {
         this.tinyRepo = tinyRepo;
     }
 
-    public Optional<TinyDoc> createTinyDoc(RedirectCreator redirectCreator){
-
-        if(tinyRepo.existsTinyDocById(redirectCreator.getAlias())){
-            throw new BadRequestException("Alias already exists");
-        }
-
+    public TinyDoc createTinyDoc(RedirectCreator redirectCreator){
         TinyDoc tinyDoc = new TinyDoc(redirectCreator.getAlias(),redirectCreator.getUrl());
-        TinyDoc saveTinyDoc = tinyRepo.save(tinyDoc);
-        return Optional.of(saveTinyDoc);
+        TinyDoc saveTinyDoc = tinyRepo.insert(tinyDoc);
+        return saveTinyDoc;
     }
 
     public TinyDoc getTinyDoc(String alias) {
-        TinyDoc tinyDoc =  tinyRepo.findTinyDocsById(alias).orElseThrow(
-                () -> new NotFoundException("we don't have that alias ! Try making it")
-        );
+        TinyDoc tinyDoc = tinyRepo.findTinyDocsById(alias);
         return tinyDoc;
     }
 
