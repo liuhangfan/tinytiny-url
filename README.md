@@ -2,9 +2,9 @@
 
 --------
 ## to do list
-1. url validation
-2. url format
-3. what if input alias already exists in DB
+1. ~~url validation~~
+2. ~~url format~~
+3. ~~what if input alias already exists in DB~~
 4. alias(id) generation algorithm
 5. rate-limiter
 6. redirect counter

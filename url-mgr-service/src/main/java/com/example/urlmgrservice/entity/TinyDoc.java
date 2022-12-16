@@ -13,7 +13,7 @@ public class TinyDoc {
     private Long timestamp;
     private Long count;
 
-    public TinyDoc(){
+    public TinyDoc() {
 
     }
 
@@ -26,6 +26,13 @@ public class TinyDoc {
 
     public TinyDoc(String id, String url) {
         this.id = id;
+        this.url = url;
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        this.timestamp = timestamp.getTime();
+        this.count = 1L;
+    }
+
+    public TinyDoc(String url) {
         this.url = url;
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         this.timestamp = timestamp.getTime();
