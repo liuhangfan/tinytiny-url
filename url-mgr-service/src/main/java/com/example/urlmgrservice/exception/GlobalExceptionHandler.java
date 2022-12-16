@@ -35,4 +35,12 @@ public class GlobalExceptionHandler {
                 new ErrorDetail(new Date(), exception.getMessage(),
                         request.getDescription(false)), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @ExceptionHandler(IllegalAliasException.class)
+    public ResponseEntity<?> illegalAliasExceptionHandling(Exception exception, WebRequest request) {
+        LOGGER.info("alias is illegal", exception);
+        return new ResponseEntity<>(
+                new ErrorDetail(new Date(), exception.getMessage(),
+                        request.getDescription(false)), HttpStatus.BAD_REQUEST);
+    }
 }
