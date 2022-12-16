@@ -15,6 +15,8 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import static com.example.urlmgrservice.UrlMgrServiceApplication.LOGGER;
+
 
 @RestController
 public class RedirectController {
@@ -27,24 +29,18 @@ public class RedirectController {
 
     @GetMapping("/{alias}")
     public ResponseEntity<?> handelRedirect(@PathVariable String alias) throws URISyntaxException {
-        try {
-            TinyDoc tinyDoc = redirectService.getTinyDoc(alias);
-            URI uri = new URI(tinyDoc.getUrl());
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.setLocation(uri);
-            return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        TinyDoc tinyDoc = redirectService.getTinyDoc(alias);
+        URI uri = new URI(tinyDoc.getUrl());
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setLocation(uri);
+        LOGGER.info("handel redirect success, input: {} , output: {}", alias, uri.toString());
+        return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
     }
 
     @PostMapping("/")
     public ResponseEntity<?> createRedirect(@Valid @RequestBody RedirectCreator redirectCreator) {
         CreatorResult result = redirectService.createTinyUrl(redirectCreator);
-        if (result.getError_msg().isEmpty()) {
-            return new ResponseEntity<>(result, HttpStatus.CREATED);
-        } else {
-            return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
-        }
+        LOGGER.info("create redirect, input: {} , output: {}", redirectCreator, result);
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
 }

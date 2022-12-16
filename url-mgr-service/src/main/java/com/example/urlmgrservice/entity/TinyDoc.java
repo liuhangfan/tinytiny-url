@@ -32,6 +32,13 @@ public class TinyDoc {
         this.count = 1L;
     }
 
+    public TinyDoc(String url) {
+        this.url = url;
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        this.timestamp = timestamp.getTime();
+        this.count = 1L;
+    }
+
     public String getId() {
         return id;
     }
