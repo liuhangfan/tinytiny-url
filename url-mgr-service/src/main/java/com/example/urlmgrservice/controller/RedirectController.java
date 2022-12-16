@@ -2,6 +2,7 @@ package com.example.urlmgrservice.controller;
 
 
 import com.example.urlmgrservice.domain.dto.RedirectCreator;
+import com.example.urlmgrservice.domain.vo.CreatorResult;
 import com.example.urlmgrservice.entity.TinyDoc;
 import com.example.urlmgrservice.service.RedirectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Optional;
 
 
 @RestController
@@ -28,24 +28,23 @@ public class RedirectController {
     @GetMapping("/{alias}")
     public ResponseEntity<?> handelRedirect(@PathVariable String alias) throws URISyntaxException {
         try {
-            System.out.println("intput " + alias);
             TinyDoc tinyDoc = redirectService.getTinyDoc(alias);
             URI uri = new URI(tinyDoc.getUrl());
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.setLocation(uri);
             return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
-        }catch (Exception e){
+        } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @PostMapping("/")
     public ResponseEntity<?> createRedirect(@Valid @RequestBody RedirectCreator redirectCreator) {
-        try{
-            TinyDoc tinyDoc = redirectService.createTinyDoc(redirectCreator);
-            return new ResponseEntity<>(tinyDoc,HttpStatus.CREATED);
-        }catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        CreatorResult result = redirectService.createTinyUrl(redirectCreator);
+        if (result.getError_msg().isEmpty()) {
+            return new ResponseEntity<>(result, HttpStatus.CREATED);
+        } else {
+            return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
         }
     }
 }

@@ -13,7 +13,7 @@ public class TinyDoc {
     private Long timestamp;
     private Long count;
 
-    public TinyDoc(){
+    public TinyDoc() {
 
     }
 
