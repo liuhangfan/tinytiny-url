@@ -5,11 +5,11 @@
 1. ~~url validation~~
 2. ~~url format~~
 3. ~~what if input alias already exists in DB~~
-4. alias(id) generation algorithm
+4. ~~alias(id) generation algorithm~~
 5. rate-limiter
 6. redirect counter
 7. deploy CI/CD
-8. logger
+8. ~~logger~~
 
 --------
 ## features

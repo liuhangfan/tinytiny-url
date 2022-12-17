@@ -8,18 +8,23 @@ import com.example.urlmgrservice.exception.IllegalAliasException;
 import com.example.urlmgrservice.exception.InternalException;
 import com.example.urlmgrservice.exception.TinyUrlNotFoundException;
 import com.example.urlmgrservice.repository.TinyRepo;
+import com.example.urlmgrservice.utils.UUID.UUIDGenerator;
 import com.example.urlmgrservice.utils.UrlFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class RedirectService {
     private final TinyRepo tinyRepo;
 
+    private final UUIDGenerator uuidGenerator;
+
     @Autowired
-    public RedirectService(TinyRepo tinyRepo) {
+    public RedirectService(TinyRepo tinyRepo, UUIDGenerator uuidGenerator) {
         this.tinyRepo = tinyRepo;
+        this.uuidGenerator = uuidGenerator;
     }
 
     public TinyDoc getTinyDoc(String alias) {
@@ -34,9 +39,9 @@ public class RedirectService {
         try {
             String url = UrlFormatter.format(redirectCreator.getUrl());
             TinyDoc tinyDoc = new TinyDoc(url);
-            attachIdByAlias(tinyDoc,redirectCreator.getAlias());
+            attachIdByAlias(tinyDoc, redirectCreator.getAlias());
             TinyDoc saveTinyDoc = tinyRepo.insert(tinyDoc);
-            return new CreatorResult(saveTinyDoc.getId());
+            return new CreatorResult("https://localhost:8080/" + saveTinyDoc.getId());
         } catch (DuplicateKeyException e) {
             throw new AliasDuplicateException("alias=%s is already exists".formatted(redirectCreator.getAlias()));
         } catch (Exception e) {
@@ -44,12 +49,14 @@ public class RedirectService {
         }
     }
 
-    private void attachIdByAlias(TinyDoc tinyDoc, String alias){
-        if (alias!=null && alias.length() > 0) {
-            if(alias.length() > 16){
+    private void attachIdByAlias(TinyDoc tinyDoc, String alias) {
+        if (alias != null && alias.length() > 0) {
+            if (alias.length() > 16) {
                 throw new IllegalAliasException("your alias=%s is too long, try a shorter one".formatted(alias));
             }
             tinyDoc.setId(alias);
+        } else {
+            tinyDoc.setId(uuidGenerator.nextIdBase64String());
         }
     }
 }

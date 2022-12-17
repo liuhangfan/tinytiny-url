@@ -1,6 +1,6 @@
 package com.example.urlmgrservice.exception;
 
-public class IllegalAliasException extends BaseException{
+public class IllegalAliasException extends BaseException {
     public IllegalAliasException() {
     }
 
