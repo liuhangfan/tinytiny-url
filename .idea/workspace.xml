@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8f7d493f-ea0f-4ba8-91d6-efe0de980f64" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/url-mgr-service/src/main/java/com/example/urlmgrservice/exception/IllegalUrlException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/url-mgr-service/src/main/java/com/example/urlmgrservice/controller/RedirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-mgr-service/src/main/java/com/example/urlmgrservice/controller/RedirectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/url-mgr-service/src/main/java/com/example/urlmgrservice/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-mgr-service/src/main/java/com/example/urlmgrservice/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/url-mgr-service/src/main/java/com/example/urlmgrservice/service/RedirectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-mgr-service/src/main/java/com/example/urlmgrservice/service/RedirectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/url-mgr-service/src/main/java/com/example/urlmgrservice/utils/UrlFormatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/url-mgr-service/src/main/java/com/example/urlmgrservice/utils/UrlFormatter.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2IfiocAaNxIhpbarbsLlsN4Z3dO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;98649aa903e1b1c09340bc9c5b9ed19f&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.urlmgrservice.utils.snowflake" />
+      <recent name="com.example.urlmgrservice.utils" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.UrlMgrServiceApplication">
+    <configuration name="SnowflakeTest.generate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="url-mgr-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.urlmgrservice.utils.UUID.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.urlmgrservice.utils.snowflake" />
+      <option name="MAIN_CLASS_NAME" value="com.example.urlmgrservice.utils.UUID.SnowflakeTest" />
+      <option name="METHOD_NAME" value="generate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SnowflakeTest.testTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="url-mgr-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.urlmgrservice.utils.UUID.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.urlmgrservice.utils.snowflake" />
+      <option name="MAIN_CLASS_NAME" value="com.example.urlmgrservice.utils.UUID.SnowflakeTest" />
+      <option name="METHOD_NAME" value="testTime" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UrlFormatterTest.formatte" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="url-mgr-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.urlmgrservice.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.urlmgrservice.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.example.urlmgrservice.utils.UrlFormatterTest" />
+      <option name="METHOD_NAME" value="formatte" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UrlMgrServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="url-mgr-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.urlmgrservice.UrlMgrServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.SnowflakeTest.generate" />
+      <item itemvalue="JUnit.SnowflakeTest.testTime" />
+      <item itemvalue="JUnit.UrlFormatterTest.formatte" />
+      <item itemvalue="Spring Boot.UrlMgrServiceApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SnowflakeTest.generate" />
+        <item itemvalue="JUnit.SnowflakeTest.testTime" />
+        <item itemvalue="JUnit.UrlFormatterTest.formatte" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f7d493f-ea0f-4ba8-91d6-efe0de980f64" name="Changes" comment="" />
+      <created>1670579213389</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670579213389</updated>
+      <workItem from="1670579214681" duration="925000" />
+      <workItem from="1670750987983" duration="4189000" />
+      <workItem from="1670919656656" duration="5891000" />
+      <workItem from="1671000937387" duration="17000" />
+      <workItem from="1671001175896" duration="12000" />
+      <workItem from="1671012722073" duration="318000" />
+      <workItem from="1671013043156" duration="2783000" />
+      <workItem from="1671084506786" duration="5604000" />
+      <workItem from="1671091607080" duration="266000" />
+      <workItem from="1671151571507" duration="20476000" />
+      <workItem from="1671215273140" duration="14341000" />
+      <workItem from="1671266867039" duration="1289000" />
+      <workItem from="1671433796141" duration="21000" />
+      <workItem from="1671433820977" duration="121000" />
+      <workItem from="1671433960691" duration="121000" />
+      <workItem from="1671434614550" duration="394000" />
+      <workItem from="1671435840002" duration="5381000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/demo" />
+    </ignored-roots>
+  </component>
+</project>

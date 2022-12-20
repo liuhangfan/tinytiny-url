@@ -43,4 +43,12 @@ public class GlobalExceptionHandler {
                 new ErrorDetail(new Date(), exception.getMessage(),
                         request.getDescription(false)), HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(IllegalUrlException.class)
+    public ResponseEntity<?> illegalUrlException(Exception exception, WebRequest request){
+        LOGGER.info("url is invalid", exception);
+        return new ResponseEntity<>(
+                new ErrorDetail(new Date(), exception.getMessage(),
+                        request.getDescription(false)), HttpStatus.BAD_REQUEST);
+    }
 }

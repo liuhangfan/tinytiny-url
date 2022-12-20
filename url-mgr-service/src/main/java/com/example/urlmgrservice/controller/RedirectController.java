@@ -19,6 +19,7 @@ import static com.example.urlmgrservice.UrlMgrServiceApplication.LOGGER;
 
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class RedirectController {
     private final RedirectService redirectService;
 
