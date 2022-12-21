@@ -51,4 +51,12 @@ public class GlobalExceptionHandler {
                 new ErrorDetail(new Date(), exception.getMessage(),
                         request.getDescription(false)), HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(TooManyRequestException.class)
+    public ResponseEntity<?> tooManyRequestException(Exception exception, WebRequest request){
+        LOGGER.info("too many request", exception);
+        return new ResponseEntity<>(
+                new ErrorDetail(new Date(), exception.getMessage(),
+                        request.getDescription(false)), HttpStatus.TOO_MANY_REQUESTS);
+    }
 }
