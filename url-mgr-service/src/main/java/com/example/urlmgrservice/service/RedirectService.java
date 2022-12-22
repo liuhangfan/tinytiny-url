@@ -41,7 +41,7 @@ public class RedirectService {
             TinyDoc tinyDoc = new TinyDoc(url);
             attachIdByAlias(tinyDoc, redirectCreator.getAlias());
             TinyDoc saveTinyDoc = tinyRepo.insert(tinyDoc);
-            return new CreatorResult("http://192.168.86.38:8080/" + saveTinyDoc.getId());
+            return new CreatorResult("http://54.153.102.45:8080/" + saveTinyDoc.getId());
         } catch (DuplicateKeyException e) {
             throw new AliasDuplicateException("alias=%s is already exists".formatted(redirectCreator.getAlias()));
         } catch (Exception e) {
