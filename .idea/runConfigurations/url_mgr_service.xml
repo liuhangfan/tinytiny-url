@@ -1,0 +1,32 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="url-mgr-service" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+    <deployment type="dockerfile">
+      <settings>
+        <option name="imageTag" value="0.1" />
+        <option name="containerName" value="tiny" />
+        <option name="portBindings">
+          <list>
+            <DockerPortBindingImpl>
+              <option name="containerPort" value="8080" />
+              <option name="hostPort" value="8080" />
+            </DockerPortBindingImpl>
+          </list>
+        </option>
+        <option name="sourceFilePath" value="url-mgr-service/Dockerfile" />
+        <option name="volumeBindings">
+          <list>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/config" />
+              <option name="hostPath" value="/home/ec2-user/url-mgr-svr/config" />
+            </DockerVolumeBindingImpl>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/etc/resolv.conf" />
+              <option name="hostPath" value="/etc/resolv.conf" />
+            </DockerVolumeBindingImpl>
+          </list>
+        </option>
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>

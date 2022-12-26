@@ -8,9 +8,37 @@ public class RedirectCreator {
     @NotNull
     private String url;
 
+    private String domain;
+
+    @Override
+    public String toString() {
+        return "RedirectCreator{" +
+                "alias='" + alias + '\'' +
+                ", url='" + url + '\'' +
+                ", domain='" + domain + '\'' +
+                '}';
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public RedirectCreator(String alias, String url, String domain) {
+        this.alias = alias;
+        this.url = url;
+        this.domain = domain;
+    }
+
     public RedirectCreator(String alias, String url) {
         this.alias = alias;
         this.url = url;
+    }
+
+    public RedirectCreator() {
     }
 
     public String getAlias() {
@@ -29,11 +57,4 @@ public class RedirectCreator {
         this.url = url;
     }
 
-    @Override
-    public String toString() {
-        return "RedirectCreator{" +
-                "alias='" + alias + '\'' +
-                ", url='" + url + '\'' +
-                '}';
-    }
 }
