@@ -1,0 +1,1 @@
+scp -i /Users/liuhangfan/Downloads/aws1.pem target/*.jar  ec2-user@ec2-52-204-55-23.compute-1.amazonaws.com:/home/ec2-user/url-mgr-svr/

@@ -6,8 +6,8 @@ import static org.springframework.util.ResourceUtils.isUrl;
 
 public class UrlFormatter {
     public static String format(String rawurl) {
-        String url = rawurl.toLowerCase();
-        if (url.startsWith("www")) {
+        String url = rawurl.trim();
+        if (!url.startsWith("http")) {
             url = "https://" + url;
         }
         if (!isUrl(url)) {
